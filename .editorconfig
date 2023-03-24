@@ -1,0 +1,67 @@
+#
+# Text editor configuration
+# =========================
+#
+# This file describes the end-of-line character, indentation and other rules for text files – in a
+# format compatible with most text editors. It really helps to have all that consistent, without
+# manual labor. You'll probably want a plugin for your editor. Go get one from
+# [editorconfig.org](http://editorconfig.org).
+#
+
+
+# General rules
+# -------------
+# - Unicode
+# - Unix-style line endings
+# - Newline before EOF
+# - No sloppy trailing spaces
+# - Two-space indentation
+
+[*]
+# Non-configurable Prettier behaviors
+charset = utf-8
+insert_final_newline = true
+# Caveat: Prettier won’t trim trailing whitespace inside template strings, but your editor might.
+trim_trailing_whitespace = true
+
+# Configurable Prettier behaviors
+# (change these if your Prettier config differs)
+end_of_line = lf
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+# top-most EditorConfig file
+root = true
+
+
+
+# Files that need whitespace at the end of lines
+# ----------------------------------------------
+# - Markdown
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{less,yml}]
+indent_style = space
+indent_size = 2
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+
+# The Lang must us tab
+# ----------------------------------------------
+# Golang with 4 space indentation
+
+[*.go]
+indent_style = tab
+indent_size = 4
+
+[*.tmpl]
+indent_style = tab
+indent_size = 2
+
+
